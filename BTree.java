@@ -27,6 +27,7 @@
  *  <a href="https://algs4.cs.princeton.edu/62btree">Section 6.2</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  */
+import java.util.ArrayList;
 public class BTree<Key extends Comparable<Key>, Value>  {
 
 	//ORDEN M
@@ -110,8 +111,9 @@ public class BTree<Key extends Comparable<Key>, Value>  {
 
         if (ht == 0) {
             for (int j = 0; j < x.m; j++) {
-                if (eq(key, children[j].key)) 
-                	return (Value)children[j].val;
+                if (eq(key, children[j].key)){  
+                    return (Value)children[j].val;
+                }
             }
         }
 
@@ -123,6 +125,7 @@ public class BTree<Key extends Comparable<Key>, Value>  {
         }
         return null;
     }
+
 
     /**
      * Inserts the key-value pair into the symbol table, overwriting the old value
@@ -207,13 +210,13 @@ public class BTree<Key extends Comparable<Key>, Value>  {
 
         if (ht == 0) {
             for (int j = 0; j < h.m; j++) {
-                s.append(indent + children[j].key + " " + children[j].val + "\n");
+                s.append(indent + children[j].key + " " + children[j].val +  ht + "\n");
             }
         }
         else {
             for (int j = 0; j < h.m; j++) {
                 if (j > 0) 
-                	s.append(indent + "(" + children[j].key + ")\n");
+                	s.append(indent + "(" + children[j].key + ")" + ht + "\n");
                 s.append(toString(children[j].next, ht-1, indent + "     "));
             }
         }
