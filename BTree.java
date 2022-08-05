@@ -210,13 +210,13 @@ public class BTree<Key extends Comparable<Key>, Value>  {
 
         if (ht == 0) {
             for (int j = 0; j < h.m; j++) {
-                s.append(indent + children[j].key + " " + children[j].val +  ht + "\n");
+                s.append(indent + children[j].key + " " + children[j].val + "\n");
             }
         }
         else {
             for (int j = 0; j < h.m; j++) {
                 if (j > 0) 
-                	s.append(indent + "(" + children[j].key + ")" + ht + "\n");
+                	s.append(indent + "(" + children[j].key + ")\n");
                 s.append(toString(children[j].next, ht-1, indent + "     "));
             }
         }
