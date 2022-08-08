@@ -101,18 +101,24 @@ public class BTree<Key extends Comparable<Key>, Value>  {
      *         and {@code null} if the key is not in the symbol table
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public Value get(Key key) {
+    public ArrayList<Value> get(Key key) {
         if (key == null) throw new IllegalArgumentException("argument to get() is null");
         return search(root, key, height);
     }
 
-    private Value search(Node x, Key key, int ht) {
+    private ArrayList<Value> search(Node x, Key key, int ht) {
         Entry[] children = x.children;
 
         if (ht == 0) {
             for (int j = 0; j < x.m; j++) {
-                if (eq(key, children[j].key)){  
-                    return (Value)children[j].val;
+                
+                if (eq(key, children[j].key)){
+                    ArrayList<Value> values = new ArrayList<Value>();  
+                    while(eq(key, children[j].key)){
+                        values.add((Value)children[j].val);
+                        j++;
+                    }
+                    return values;
                 }
             }
         }
@@ -210,13 +216,13 @@ public class BTree<Key extends Comparable<Key>, Value>  {
 
         if (ht == 0) {
             for (int j = 0; j < h.m; j++) {
-                s.append(indent + children[j].key + " " + children[j].val + "\n");
+                s.append(indent + children[j].key + " " + children[j].val + " "+ht+"\n");
             }
         }
         else {
             for (int j = 0; j < h.m; j++) {
                 if (j > 0) 
-                	s.append(indent + "(" + children[j].key + ")\n");
+                	s.append(indent + "(" + children[j].key + ")"+ht+"\n");
                 s.append(toString(children[j].next, ht-1, indent + "     "));
             }
         }
