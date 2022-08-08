@@ -257,7 +257,8 @@ Los resultados son
 Agregar un nodo adicional (www.youtube.com, 134.24.13.78) y mostrarlo paso a
 paso.
 
-![](imagenesbtree/btreeinsertyoutube.png)
+<img src="imagenesbtree/btreeinsertyoutube.png" width="200%">
+
 ## CONCLUSIONES
  
 # RETROALIMENTACION GENERAL
