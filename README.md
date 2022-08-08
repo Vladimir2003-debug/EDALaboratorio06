@@ -260,10 +260,12 @@ paso.
 <img src="imagenesbtree/btreeinsertyoutube.png" width="200%">
 
 ## CONCLUSIONES
- 
+Como se vio en el desarrollo de este ejercicio El b tree puede servir como DNS. Y   
+la altura del arbol es considerablemente menor comparado con la de un BST. 
 # RETROALIMENTACION GENERAL
 
 # REFERENCIAS Y BIBLIOGRAFIA
+
 Weiss M., Data Structures & Algorithm Analysis Using Java, 2010, Addison-Wesley.
 Capítulo 4. Representación de conjuntos mediante arboles, Departamento de Informática y Sistemas Área de Lenguajes y Sistemas, Universidad de Murcia, pag.168
 https://www.cs.usfca.edu/~galles/visualization/BTree.html
